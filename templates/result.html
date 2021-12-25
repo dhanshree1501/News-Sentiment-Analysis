@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			
+		</div>
+		<h2>Sentiment analysis for news headlines</h2>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b></b></p>
+	<div class="results">
+
+
+		
+	{% if my_prediction >= 0 %}
+	<h2 style="color:red;">It's a positive news !! {{my_prediction}}  </h2>
+	{% elif my_prediction <= 0 %}
+	<h2 style="color:blue;">Oops!It's a negative news!! {{my_prediction}}</h2>
+    {% elif my_prediction==0 %}
+    <h2 style="color:yellow;">It seems to be a neutral headline</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
